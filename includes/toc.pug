@@ -1,0 +1,15 @@
+mixin list(item, lvl)
+  if item.lvl === lvl
+    li
+      a(href='#' + item.slug) #{item.content}
+  else
+    ul
+      +list(item, lvl + 1)
+
+div#top
+  h3#section= 'Sections'
+  h3#progress= ''
+
+ul#toc.hidden
+  each item in toc
+    +list(item, 2)

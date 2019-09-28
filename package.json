@@ -1,0 +1,7 @@
+{
+  "name": "maren-theme-default",
+  "version": "1.0.0",
+  "dependenies": {
+    "pug": "2.0.4"
+  }
+}
