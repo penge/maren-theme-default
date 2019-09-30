@@ -4,8 +4,13 @@
   /*global hljs*/
   "use strict";
 
+  var mainId = "body > div#main";
+  var tocId = "ul#toc";
+  var sectionId = "div#top > h3#section";
+  var progressId = "div#top > h3#progress";
+
   $(document).ready(function() {
-    initHash();
+    setTimeout(initHash, 300);
     initToc();
     document.querySelectorAll('pre code').forEach(function(block) {
       hljs.highlightBlock(block);
@@ -47,11 +52,11 @@
 
   function updateSection(section) {
     if (!section) { return; }
-    $("#section").text(section);
+    $(sectionId).text(section);
   }
 
   function updateProgress(scrollPos) {
-    var progress = $("#progress");
+    var progress = $(progressId);
     if (!progress.length) { return; }
     var max = $(document).height() - $(window).height();
     var value = Math.ceil((scrollPos / max) * 100);
@@ -60,7 +65,7 @@
   }
 
   function toggleToc() {
-    $("#toc, #progress, #main").toggle();
+    $(tocId + "," + progressId + "," + mainId).toggle();
     tocOpen = !tocOpen;
     reset();
     history.replaceState(null, null, " ");
@@ -81,16 +86,16 @@
     var hash = window.location.hash;
     var h2 = $("h2" + hash);
     if (!hash || !h2.length) { return; }
-    $("html, body").animate({ scrollTop: $(hash).offset().top }, 200);
+    $("html").animate({ scrollTop: $(h2).offset().top }, 200);
   }
 
   function initToc() {
-    if ($("#toc").length === 0) {
+    if ($(tocId).length === 0) {
       return;
     }
     $(document).on("scroll", onScroll);
-    $("#section").click(toggleToc);
-    $("#toc a").click(toggleToc);
-    $("#main h2").click(updateHash);
+    $(sectionId).click(toggleToc);
+    $(tocId + " a").click(toggleToc);
+    $(mainId + " h2").click(updateHash);
   }
 })();

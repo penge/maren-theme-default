@@ -61,7 +61,14 @@ ul
 p, li
   line-height: 2;
 
-p > code
+h1 > code,
+h2 > code,
+h3 > code,
+h4 > code,
+h5 > code,
+h6 > code,
+p > code,
+li > code
   font-family: code_font;
   font-weight: bold;
   color: black;
@@ -85,7 +92,7 @@ blockquote
   & > p
     padding: 15px 15px 15px 25px;
 
-#top
+div#top
   position: fixed;
   width: calc(100% - 60px);
   max-width: 900px;
@@ -97,14 +104,14 @@ blockquote
     display: inline-block;
     margin: 1em 0 .6em 0;
 
-#section
+div#top > h3#section
   cursor: pointer;
 
-#progress
+div#top > h3#progress
   color: progress_color;
   float: right;
 
-#toc
+ul#toc
   list-style-type: none;
   padding: 100px 0;
   margin: 0;
@@ -120,12 +127,12 @@ blockquote
   body
     padding: 10px;
 
-  #top
+  div#top
     width: calc(100% - 20px);
     padding: 10px;
     margin: -10px;
 
-  #progress
+  div#top > h3#progress
     padding: 0 30px 0 10px;
 
 @import "pages/home.styl"
