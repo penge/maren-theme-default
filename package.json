@@ -3,5 +3,14 @@
   "version": "1.0.0",
   "dependenies": {
     "pug": "2.0.4"
+  },
+  "scripts": {
+    "install": "npm run css && npm run js",
+    "css": "stylus -c < styles.styl > styles.min.css",
+    "js": "uglifyjs scripts.js -o scripts.min.js --source-map"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.7",
+    "uglifyjs": "^2.4.11"
   }
 }
