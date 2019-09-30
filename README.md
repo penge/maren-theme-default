@@ -1,13 +1,17 @@
 # maren-theme-default
 
-## Minify styles
+## Setup
 
-```
-$ stylus -c < styles.styl > styles.min.css
+```sh
+$ npm i # npm run css && npm run js
+
+# will create:
+# - styles.min.css
+# - scripts.min.js
+# - scripts.min.js.map
 ```
 
-## Minify scripts
+## Maren
 
-```
-$ uglifyjs scripts.js -o scripts.min.js --source-map
-```
+- `template.js` *(required)*
+- `options.json` *(optional)*
