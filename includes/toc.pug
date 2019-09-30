@@ -1,5 +1,5 @@
 mixin list(item, lvl)
-  if item.lvl === lvl
+  if item.lvl <= lvl
     li
       a(href='#' + item.slug) #{item.content}
   else
