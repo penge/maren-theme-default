@@ -4,7 +4,8 @@ html(lang='en')
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title= title
-    link(href='data:,' rel='icon')
+
+    include includes/custom.pug
 
     if _theme.styles
       each style in _theme.styles
