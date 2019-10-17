@@ -7,7 +7,7 @@
   "scripts": {
     "install": "npm run css && npm run js",
     "css": "stylus -c < styles.styl > styles.min.css",
-    "js": "uglifyjs scripts.js -o scripts.min.js --source-map"
+    "js": "uglifyjs scripts.js -o scripts.min.js -c -m --source-map"
   },
   "devDependencies": {
     "stylus": "^0.54.7",
