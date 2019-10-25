@@ -3,20 +3,20 @@ html(lang='en')
   head
     meta(charset='utf-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title= title
+    title= meta.title
 
     include includes/custom.pug
 
-    if _theme.styles
-      each style in _theme.styles
+    if options.styles
+      each style in options.styles
         link(href=style rel='stylesheet' type='text/css')
 
-    if _theme.scripts
-      each script in _theme.scripts
+    if options.scripts
+      each script in options.scripts
         script(src=script, defer)
 
-  body(id=id,class=toc && 'toc')
-    if toc
+  body(id=meta.id,class=meta.toc && 'toc')
+    if meta.toc
       include includes/toc.pug
 
     div#main !{html}
