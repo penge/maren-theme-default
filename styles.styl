@@ -1,25 +1,13 @@
-// Colors
-text_color = rgb(51, 51, 51);
-progress_color = rgb(226, 226, 226);
-link_color = darkblue;
-
-// Backgrounds
-code_background = #f1f1f1;
-
-// Fonts
-body_font = "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", Serif;
-heading_font = "Lato", 'Helvetica Neue', Helvetica, sans-serif;
-code_font = Menlo, Monaco, "Courier New", monospace;
-
+@import "styl/colors.styl"
+@import "styl/fonts.styl"
 
 html
   -webkit-font-smoothing: antialiased;
-  font-size: 17px;
+  font-size: 23px;
   overflow-x: hidden;
 
 body
   font-family: body_font;
-  font-size: 1.1rem;
   color: text_color;
   padding: 30px;
   margin: 0 auto;
@@ -69,13 +57,8 @@ li > code
 
 pre code.hljs
   font-family: code_font;
-  font-size: 90%;
   padding: 1.2em;
   border-radius: 5px;
-  opacity: 0;
-  &.loaded
-    transition: opacity .1s ease-out .6s;
-    opacity: 1;
 
 blockquote
   border-left: 10px solid #f1f1f1;
@@ -114,6 +97,34 @@ ul#toc
 .hidden
   display: none;
 
+.o20
+  opacity: .2;
+
+.o50
+  opacity: .5;
+
+.o70
+  opacity: .7;
+
+.noselect
+  user-select: none;
+  @extend .o20
+
+.orange
+  color: orange;
+
+.antiquewhite
+  color: antiquewhite;
+
+.bold
+  font-weight: bold;
+
+.underline
+  text-decoration: underline;
+
+.create-a-blog
+  box-shadow: 12px 18px 0px 3px;
+
 @media (max-width: 767px)
   body
     padding: 10px;
@@ -126,4 +137,4 @@ ul#toc
   div#top > h3#progress
     padding: 0 30px 0 10px;
 
-@import "pages/home.styl"
+@import "styl/pages/home.styl"
