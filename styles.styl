@@ -55,10 +55,17 @@ li > code
   padding: 6px;
   border-radius: 3px;
 
+pre code
+  opacity: 0;
+
 pre code.hljs
   font-family: code_font;
   padding: 1.2em;
   border-radius: 5px;
+  opacity: 0;
+  &.loaded
+    transition: opacity .2s;
+    opacity: 1;
 
 blockquote
   border-left: 10px solid #f1f1f1;

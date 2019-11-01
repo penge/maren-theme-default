@@ -12,7 +12,10 @@
   $(document).ready(function() {
     setTimeout(initHash, 300);
     initToc();
-    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('pre code').forEach(function(block) {
+      hljs.highlightBlock(block);
+      block.classList.add('loaded');
+    });
   });
 
   var tocOpen = false;
