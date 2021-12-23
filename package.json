@@ -1,17 +1,15 @@
 {
   "name": "maren-theme-default",
   "version": "2.0.1",
-  "dependenies": {
-    "pug": "2.0.4"
-  },
   "scripts": {
     "install": "npm run css && npm run js",
     "css": "stylus -c < styles.styl > styles.min.css",
     "js": "uglifyjs scripts.js -o scripts.min.js -c -m --source-map"
   },
   "devDependencies": {
-    "stylus": "^0.54.7",
+    "pug": "^3.0.2",
+    "stylus": "^0.56.0",
     "toc-to-html": "^0.2.1",
-    "uglifyjs": "^2.4.11"
+    "uglify-js": "^3.14.5"
   }
 }
