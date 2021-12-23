@@ -1,5 +1,7 @@
 # maren-theme-default
 
+Default theme for [Maren](https://github.com/penge/maren).
+
 ## Setup
 
 ```sh

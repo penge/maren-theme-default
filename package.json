@@ -1,6 +1,10 @@
 {
   "name": "maren-theme-default",
   "version": "2.0.1",
+  "description": "Default theme for Maren.",
+  "author": "Pavel Bucka",
+  "license": "MIT",
+  "repository": "github:penge/maren-theme-default",
   "scripts": {
     "install": "npm run css && npm run js",
     "css": "stylus -c < styles.styl > styles.min.css",
